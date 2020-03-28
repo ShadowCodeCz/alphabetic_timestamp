@@ -29,7 +29,6 @@ This example show coding of datetime 2020-01-01 20:20:20.002000. It means timest
 
  ### Symbols of Base 36
 ```python
-import datetime
 import alphabetic_timestamp as ats
 
 print(ats.base36.symbols)
@@ -39,12 +38,27 @@ print(ats.base36.symbols)
  
 ### Symbols of Base 62
 ```python
-import datetime
 import alphabetic_timestamp as ats
 
 print(ats.base62.symbols)
 
 >>> 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+``` 
+
+## Interface
+```python
+import datetime
+import alphabetic_timestamp as ats
+
+dt = datetime.datetime.now()
+ts = dt.timestamp()
+
+ats.base36.now(time_unit=ats.TimeUnit.seconds)
+ats.base36.from_datetime(dt, time_unit=ats.TimeUnit.seconds)
+ats.base36.from_timestamp(ts, time_unit=ats.TimeUnit.seconds)
+
+ats.base36.to_datetime("q67vhw", time_unit=ats.TimeUnit.seconds, time_zone=None)
+ats.base36.to_timestamp("q67vhw", time_unit=ats.TimeUnit.seconds)
 ``` 
 
 ## Examples
@@ -64,10 +78,8 @@ print(ats.base36.now())
 import datetime
 import alphabetic_timestamp as ats
 
-dt = datetime.datetime.now()
-ts = dt.timestamp()
-
 # DATETIME -> ALPHABETIC_TIMESTAMP -> DATETIME
+dt = datetime.datetime.now()
 
 alphabetic_ts_36 = ats.base36.from_datetime(dt)
 decoded_ts_36 = ats.base36.to_datetime(alphabetic_ts_36)
@@ -76,6 +88,7 @@ alphabetic_ts_62 = ats.base62.from_datetime(dt)
 decoded_ts_62 = ats.base62.to_datetime(alphabetic_ts_62) 
 
 # TIMESTAMP -> ALPHABETIC_TIMESTAMP -> TIMESTAMP 
+ts = dt.timestamp()
 
 alphabetic_ts_36 = ats.base36.from_timestamp(ts)
 decoded_ts_36 = ats.base36.to_timestamp(alphabetic_ts_36)

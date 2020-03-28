@@ -3,7 +3,9 @@ from setuptools import setup
 classifiers = [
     'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
-    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.6',
+    'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
+    'Operating System :: OS Independent'
 ]
 
 with open("README.md", "r") as fh:
@@ -23,5 +25,6 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     classifiers=classifiers,
-    keywords=["timestamp", "alphabetic"]
+    keywords=["timestamp", "alphabetic"],
+    python_requires='>=3.6',
 )
