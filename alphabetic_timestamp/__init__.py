@@ -1,6 +1,10 @@
 import string
 import datetime
 
+# TODO: Make package usable in Python 2 and 3. Then create universal wheel.
+# TODO: Or add type annotations and keep required version 3.6+
+# TODO: Add test now() with timedelta & math.isclose
+
 
 class TimeUnit:
     seconds = 1

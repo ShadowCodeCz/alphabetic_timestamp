@@ -18,13 +18,18 @@ setup(
     name='alphabetic_timestamp',
     version='1.0',
     packages=['alphabetic_timestamp'],
-    url='https://github.com/ShadowCodeCz/alphabetic_timestamp',
+    url='',
+    project_urls={
+        'Source': 'https://github.com/ShadowCodeCz/alphabetic_timestamp',
+        'Tracker': 'https://github.com/ShadowCodeCz/alphabetic_timestamp/issues',
+    },
     author='ShadowCodeCz',
     author_email='shadow.code.cz@gmail.com',
     description=description,
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type='text/markdown',
     classifiers=classifiers,
-    keywords=["timestamp", "alphabetic"],
+    keywords='timestamp alphabetic',
     python_requires='>=3.6',
+    license='GNU Affero General Public License v3 or later (AGPLv3+)'
 )

@@ -61,6 +61,8 @@ ats.base36.to_datetime("q67vhw", time_unit=ats.TimeUnit.seconds, time_zone=None)
 ats.base36.to_timestamp("q67vhw", time_unit=ats.TimeUnit.seconds)
 ``` 
 
+Note: The string "q67vhw" is only example of encoded timestamp.
+
 ## Examples
 
 ### Encode & Print
@@ -78,6 +80,7 @@ print(ats.base36.now())
 import datetime
 import alphabetic_timestamp as ats
 
+
 # DATETIME -> ALPHABETIC_TIMESTAMP -> DATETIME
 dt = datetime.datetime.now()
 
@@ -86,6 +89,7 @@ decoded_ts_36 = ats.base36.to_datetime(alphabetic_ts_36)
 
 alphabetic_ts_62 = ats.base62.from_datetime(dt)
 decoded_ts_62 = ats.base62.to_datetime(alphabetic_ts_62) 
+
 
 # TIMESTAMP -> ALPHABETIC_TIMESTAMP -> TIMESTAMP 
 ts = dt.timestamp()
@@ -104,15 +108,18 @@ import alphabetic_timestamp as ats
 
 dt = datetime.datetime.now()
 
+
 # Set time unit for current timestamp
 
 now36_ts = ats.base36.now() # default: ats.TimeUnit.seconds
 now36_ts = ats.base36.now(time_unit=ats.TimeUnit.seconds)
 
+
 # Set time unit for specific datetime and timestamp
 
 alphabetic_ts_36 = ats.base36.from_datetime(dt, time_unit=ats.TimeUnit.seconds)
 alphabetic_ts_36 = ats.base36.from_timestamp(dt.timestamp(), time_unit=ats.TimeUnit.seconds)
+
 
 # Examples of available time units
 
@@ -120,3 +127,6 @@ now36_ts = ats.base36.now(time_unit=ats.TimeUnit.deciseconds)
 now36_ts = ats.base36.now(time_unit=ats.TimeUnit.centiseconds)
 now36_ts = ats.base36.now(time_unit=ats.TimeUnit.milliseconds)
 ``` 
+
+## Possible Issue
+There is a possible issue caused by [bug in standard datetime module](https://bugs.python.org/issue37527).
