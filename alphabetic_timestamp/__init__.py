@@ -2,8 +2,6 @@ import string
 import datetime
 
 # TODO: Make package usable in Python 2 and 3. Then create universal wheel.
-# TODO: Or add type annotations and keep required version 3.6+
-# TODO: Add test now() with timedelta & math.isclose
 
 
 class TimeUnit:
@@ -24,7 +22,7 @@ class UniversalBaseConverter:
         return self._datetime_to_base(date_time, time_unit)
 
     def from_timestamp(self, ts, time_unit=TimeUnit.seconds):
-        return self._timestamp_to_base(ts * time_unit)
+        return self._timestamp_to_base(int(ts * time_unit))
 
     def to_datetime(self, code_ts, time_unit=TimeUnit.seconds, time_zone=None):
         ts = self.to_timestamp(code_ts, time_unit)
