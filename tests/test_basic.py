@@ -3,7 +3,7 @@ import pytest
 import alphabetic_timestamp
 
 
-class TestInput:
+class TInput:
     def __init__(self):
         self.dt = None
         self.time_unit = None
@@ -15,27 +15,27 @@ class TestInput:
 
 test_inputs = []
 
-t1 = TestInput()
+t1 = TInput()
 t1.dt = datetime.datetime(1971, 1, 1, 0, 0, 0, 111)
 t1.time_unit = alphabetic_timestamp.TimeUnit.seconds
 test_inputs.append(t1)
 
-t2 = TestInput()
+t2 = TInput()
 t2.dt = datetime.datetime(1971, 1, 1, 0, 0, 0, 111)
 t2.time_unit = alphabetic_timestamp.TimeUnit.deciseconds
 test_inputs.append(t2)
 
-t3 = TestInput()
+t3 = TInput()
 t3.dt = datetime.datetime(1971, 1, 1, 0, 0, 0, 111)
 t3.time_unit = alphabetic_timestamp.TimeUnit.centiseconds
 test_inputs.append(t3)
 
-t4 = TestInput()
+t4 = TInput()
 t4.dt = datetime.datetime(1971, 1, 1, 0, 0, 0, 111)
 t4.time_unit = alphabetic_timestamp.TimeUnit.milliseconds
 test_inputs.append(t4)
 
-t5 = TestInput()
+t5 = TInput()
 t5.dt = datetime.datetime(2020, 12, 31, 0, 0, 0, 0)
 t5.time_unit = alphabetic_timestamp.TimeUnit.milliseconds
 test_inputs.append(t5)
