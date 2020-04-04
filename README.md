@@ -1,6 +1,9 @@
 # Alphabetic Timestamp
 
-|PyPI-Status| |PyPI-Versions| |Build-Status|
+[![PyPI-Status](https://img.shields.io/pypi/v/alphabetic-timestamp.svg)](https://pypi.org/project/alphabetic-timestamp/)
+[![PyPI-Versions](https://img.shields.io/pypi/pyversions/alphabetic-timestamp.svg)](https://pypi.org/project/alphabetic-timestamp/)
+[![Build Status](https://travis-ci.com/ShadowCodeCz/alphabetic_timestamp.svg?branch=master)](https://travis-ci.com/ShadowCodeCz/alphabetic_timestamp)
+[![GitHub license](https://img.shields.io/github/license/ShadowCodeCz/alphabetic_timestamp)](https://github.com/ShadowCodeCz/alphabetic_timestamp/blob/master/LICENSE)
 
 This is small Python package which encode standard timestamp to shorted form by using alphabetic symbols. 
 
@@ -133,13 +136,5 @@ now36_ts = ats.base36.now(time_unit=ats.TimeUnit.milliseconds)
 ## Possible Issue
 There is a possible issue caused by [bug in standard datetime module](https://bugs.python.org/issue37527).
 
-
-
-.. |PyPI-Status| image:: https://img.shields.io/pypi/v/alphabetic-timestamp.svg
-  :target: https://pypi.org/project/alphabetic-timestamp/
-
-.. |PyPI-Versions| image:: https://img.shields.io/pypi/pyversions/alphabetic-timestamp.svg
-   :target: https://pypi.org/project/alphabetic-timestamp/
-
-.. |Build-Status| image:: https://travis-ci.com/ShadowCodeCz/alphabetic_timestamp.svg?branch=master
-  :target: https://travis-ci.com/ShadowCodeCz/alphabetic_timestamp
+  
+  
