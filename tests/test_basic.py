@@ -111,3 +111,4 @@ def _t_now(base):
 
 def _delta_seconds(dt1, dt2):
     return abs((dt1 - dt2).total_seconds())
+
