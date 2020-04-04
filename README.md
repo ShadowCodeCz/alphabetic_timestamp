@@ -2,6 +2,7 @@
 
 [![PyPI-Status](https://img.shields.io/pypi/v/alphabetic-timestamp.svg)](https://pypi.org/project/alphabetic-timestamp/)
 [![PyPI-Versions](https://img.shields.io/pypi/pyversions/alphabetic-timestamp.svg)](https://pypi.org/project/alphabetic-timestamp/)
+[![GitHub issues](https://img.shields.io/github/issues/ShadowCodeCz/alphabetic_timestamp)](https://github.com/ShadowCodeCz/alphabetic_timestamp/issues)
 [![Build Status](https://travis-ci.com/ShadowCodeCz/alphabetic_timestamp.svg?branch=master)](https://travis-ci.com/ShadowCodeCz/alphabetic_timestamp)
 [![GitHub license](https://img.shields.io/github/license/ShadowCodeCz/alphabetic_timestamp)](https://github.com/ShadowCodeCz/alphabetic_timestamp/blob/master/LICENSE)
 
