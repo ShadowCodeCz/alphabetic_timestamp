@@ -46,7 +46,6 @@ t6.dt = datetime.datetime(2020, 12, 31, 10, 10, 10, 0)
 t6.time_unit = alphabetic_timestamp.TimeUnit.seconds
 test_inputs.append(t6)
 
-
 t7 = TInput()
 t7.dt = datetime.datetime(2020, 12, 31, 23, 59, 59, 5959)
 t7.time_unit = alphabetic_timestamp.TimeUnit.milliseconds
