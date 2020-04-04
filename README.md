@@ -1,5 +1,7 @@
 # Alphabetic Timestamp
 
+|PyPI-Status| |Downloads| |PyPI-Versions| |Build-Status| |Codecov| |Codefactor| |LICENCE|
+
 This is small Python package which encode standard timestamp to shorted form by using alphabetic symbols. 
 
 ## Installation 
