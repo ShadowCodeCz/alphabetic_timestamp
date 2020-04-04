@@ -49,13 +49,26 @@ ids = [ti.id for ti in test_inputs]
 def test_code_decode(dt, time_unit):
     reference_timestamp = datetime.datetime.timestamp(dt)
 
-    short36_ts = alphabetic_timestamp.base36.from_datetime(dt, time_unit=time_unit)
-    decoded36_ts = alphabetic_timestamp.base36.to_timestamp(short36_ts, time_unit=time_unit)
+    ats36 = alphabetic_timestamp.base36.from_datetime(dt, time_unit=time_unit)
+    decoded36_ts = alphabetic_timestamp.base36.to_timestamp(ats36, time_unit=time_unit)
+    decoded36_dt = alphabetic_timestamp.base36.to_datetime(ats36, time_unit=time_unit)
     assert int(reference_timestamp) == int(decoded36_ts)
+    assert _delta_seconds(decoded36_dt, dt) <= 1
 
-    short62_ts = alphabetic_timestamp.base62.from_datetime(dt, time_unit=time_unit)
-    decoded62_ts = alphabetic_timestamp.base62.to_timestamp(short62_ts, time_unit=time_unit)
+    ats62 = alphabetic_timestamp.base62.from_datetime(dt, time_unit=time_unit)
+    decoded62_ts = alphabetic_timestamp.base62.to_timestamp(ats62, time_unit=time_unit)
+    decoded62_dt = alphabetic_timestamp.base62.to_datetime(ats62, time_unit=time_unit)
     assert int(reference_timestamp) == int(decoded62_ts)
+    assert _delta_seconds(decoded62_dt, dt) <= 1
 
 
+def test_now():
+    now = datetime.datetime.now()
+    ats36 = alphabetic_timestamp.base36.now()
 
+    decoded36_dt = alphabetic_timestamp.base36.to_datetime(ats36)
+    assert _delta_seconds(now, decoded36_dt) < 2
+
+
+def _delta_seconds(dt1, dt2):
+    return abs((dt1 - dt2).total_seconds())
