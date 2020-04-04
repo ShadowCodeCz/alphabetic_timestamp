@@ -22,7 +22,7 @@ description = "This is small Python package which encode standard " \
 
 setup(
     name='alphabetic_timestamp',
-    version='1.0.1',
+    version='1.1.0',
     packages=['alphabetic_timestamp'],
     url='https://github.com/ShadowCodeCz/alphabetic_timestamp',
     project_urls={
