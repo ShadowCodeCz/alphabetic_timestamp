@@ -51,6 +51,11 @@ t7.dt = datetime.datetime(2020, 12, 31, 23, 59, 59, 5959)
 t7.time_unit = alphabetic_timestamp.TimeUnit.milliseconds
 test_inputs.append(t7)
 
+t8 = TInput()
+t8.dt = datetime.datetime(2020, 1, 1, 1, 1, 1, 1)
+t8.time_unit = alphabetic_timestamp.TimeUnit.milliseconds
+test_inputs.append(t8)
+
 
 parameters = [(ti.dt, ti.time_unit) for ti in test_inputs]
 ids = [ti.id for ti in test_inputs]
