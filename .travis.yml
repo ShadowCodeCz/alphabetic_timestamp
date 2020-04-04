@@ -1,10 +1,17 @@
 language: python
 python:
-  - "3.4"
-  - "3.5"
-  - "3.6"
-  - "3.7"
-  - "3.8"
-  - "3.9-dev"
+- '3.4'
+- '3.5'
+- '3.6'
+- '3.7'
+- '3.8'
+- 3.9-dev
 script:
-  - pytest
+- pytest
+deploy:
+  provider: pypi
+  user: __token__
+  password:
+    secure: mrU9MFusPwOhEf29ZhqGxo/JR+wmYcC+aWj6UIkoy5uBd1rPQ5FoP09aWybQ617vkYQtlpp5+vO6vtjf9fR09mAWs43F3zjdLKN57xZW52hdO8cdeSnNg7bLEt7PJj9wdgQvclhlbVFyWiBOyTSJDTEZqj6gBT0DW/EM3Fx6QM+2DyhULd1pdynzGFidz0X3IpsDw0j2DWVHFqiftir8MQKhKieh5nuDKWL9EzviB7KcHzl18iL3zS1Difb2ISnu65K6f+97mT2v35ep0BaHbo6/0bGFSOTSzSAOYygK+4nqWAKR+arlkn7bHxYJUS1GKvkMz29538N7YJ1EBtB+ff1+R12EweXo/FbDHK70UsIgUK9fDtRRQVb8inGclJ1wYQMz0DWlr2piVkCwIo7vASEfWwapEsvo016l4eb7ssFP0RTYtdRv7aHR4BQyzdxL4NYMwwnaibANRwaDW61wQknFKXE9gpVRw60UgGCKnFd43X3rX0zTjjuxflt7vyVozck2xzbm4DfG9Ipa42u8ffoL9lBKhGmUE7JGw/dODpYGXDjoMp6KD7GtoqUaF4A++cWy3c5zEDilGmLGy0gNJJxEyMze57tHaMQxnhlnViU/uyz5JRsl8ZwSGA+15ICfPOwjR/Ir9bTF3S9wG8I9cxjGFjqv/A2dCb4Dvb0ZSiA=
+  on:
+    tags: true

@@ -21,7 +21,7 @@ description = "This is small Python package which encode standard " \
 
 setup(
     name='alphabetic_timestamp',
-    version='1.0',
+    version='1.0.1',
     packages=['alphabetic_timestamp'],
     url='',
     project_urls={
@@ -35,6 +35,5 @@ setup(
     long_description_content_type='text/markdown',
     classifiers=classifiers,
     keywords='timestamp alphabetic',
-    python_requires='>=3.6',
     license='GNU Affero General Public License v3 or later (AGPLv3+)'
 )
