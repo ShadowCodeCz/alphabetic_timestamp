@@ -12,6 +12,7 @@ class TestInput:
     def id(self):
         return "%s [%s]" % (str(self.dt), self.time_unit)
 
+
 test_inputs = []
 
 t1 = TestInput()
