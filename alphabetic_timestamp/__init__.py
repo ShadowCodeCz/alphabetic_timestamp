@@ -1,7 +1,6 @@
+import time
 import string
 import datetime
-
-# TODO: Make package usable in Python 2 and 3. Then create universal wheel.
 
 
 class TimeUnit:
@@ -11,12 +10,16 @@ class TimeUnit:
     milliseconds = 1000
 
 
-class UniversalBaseConverter:
+class UniversalBaseConverter(object):
     symbols = []
 
     def now(self, time_unit=TimeUnit.seconds):
-        n = datetime.datetime.now()
-        return self._datetime_to_base(n, time_unit)
+        # Only Python3
+        # n = datetime.datetime.now()
+        # return self._datetime_to_base(n, time_unit)
+
+        n = time.time()
+        return self._timestamp_to_base(int(n * time_unit))
 
     def from_datetime(self, date_time, time_unit=TimeUnit.seconds):
         return self._datetime_to_base(date_time, time_unit)
@@ -47,7 +50,9 @@ class UniversalBaseConverter:
             return [remainder]
 
     def _datetime_to_base(self, date_time, time_unit):
-        ts = int(date_time.timestamp() * time_unit)
+        # Only Python3
+        # ts = int(date_time.timestamp() * time_unit)
+        ts = int(time.mktime(date_time.timetuple()) * time_unit)
         return self._timestamp_to_base(ts)
 
     def _timestamp_to_base(self, timestamp):
@@ -66,3 +71,4 @@ class Base62Converter(UniversalBaseConverter):
 
 base36 = Base36Converter()
 base62 = Base62Converter()
+

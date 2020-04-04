@@ -1,3 +1,4 @@
+import time
 import datetime
 import pytest
 import alphabetic_timestamp
@@ -58,25 +59,21 @@ ids = [ti.id for ti in test_inputs]
 
 @pytest.mark.parametrize("dt, time_unit", parameters, ids=ids)
 def test_code_decode_dt_36(dt, time_unit):
-    # TODO: Missing test for from_timestamp
     _t_code_decode_dt(dt, time_unit, alphabetic_timestamp.base36)
 
 
 @pytest.mark.parametrize("dt, time_unit", parameters, ids=ids)
 def test_code_decode_dt_62(dt, time_unit):
-    # TODO: Missing test for from_timestamp
     _t_code_decode_dt(dt, time_unit, alphabetic_timestamp.base62)
 
 
 @pytest.mark.parametrize("dt, time_unit", parameters, ids=ids)
 def test_code_decode_ts_36(dt, time_unit):
-    # TODO: Missing test for from_timestamp
     _t_code_decode_ts(dt, time_unit, alphabetic_timestamp.base36)
 
 
 @pytest.mark.parametrize("dt, time_unit", parameters, ids=ids)
 def test_code_decode_ts_62(dt, time_unit):
-    # TODO: Missing test for from_timestamp
     _t_code_decode_ts(dt, time_unit, alphabetic_timestamp.base62)
 
 
@@ -95,7 +92,9 @@ def _t_code_decode_dt(dt, time_unit, base):
 
 
 def _t_code_decode_ts(dt, time_unit, base):
-    timestamp = datetime.datetime.timestamp(dt)
+    # Only Python3
+    # timestamp = datetime.datetime.timestamp(dt)
+    timestamp = time.mktime(dt.timetuple())
 
     a_ts_from_ts = base.from_timestamp(timestamp, time_unit=time_unit)
     decoded_ts = base.to_timestamp(a_ts_from_ts, time_unit=time_unit)
