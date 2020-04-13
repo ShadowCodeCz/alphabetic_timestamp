@@ -2,8 +2,11 @@ import time
 import string
 import datetime
 
+# TODO: Custom Base X - rework symbols & add to readme
+# TODO: Try install & import alphabetic-timestamp and alphabetic-timestamp FIX README
 
-class TimeUnit:
+
+class TimeUnit(object):
     seconds = 1
     deciseconds = 10
     centiseconds = 100

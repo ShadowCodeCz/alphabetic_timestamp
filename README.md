@@ -4,15 +4,16 @@
 [![PyPI-Versions](https://img.shields.io/pypi/pyversions/alphabetic-timestamp.svg)](https://pypi.org/project/alphabetic-timestamp/)
 [![GitHub issues](https://img.shields.io/github/issues/ShadowCodeCz/alphabetic_timestamp)](https://github.com/ShadowCodeCz/alphabetic_timestamp/issues)
 [![Build Status](https://travis-ci.com/ShadowCodeCz/alphabetic_timestamp.svg?branch=master)](https://travis-ci.com/ShadowCodeCz/alphabetic_timestamp)
-[![GitHub license](https://img.shields.io/github/license/ShadowCodeCz/alphabetic_timestamp)](https://github.com/ShadowCodeCz/alphabetic_timestamp/blob/master/LICENSE)
 ![PyPI - Status](https://img.shields.io/pypi/status/alphabetic-timestamp)
+[![GitHub license](https://img.shields.io/github/license/ShadowCodeCz/alphabetic_timestamp)](https://github.com/ShadowCodeCz/alphabetic_timestamp/blob/master/LICENSE)
+
 
 This is small Python package which encode standard timestamp to shorted form by using alphabetic symbols. 
 
 ## Installation 
 
 ```python
-pip install alphabetic_timestamp 
+pip install alphabetic-timestamp 
 ``` 
 
 ## Description
@@ -53,6 +54,7 @@ print(ats.base62.symbols)
 ``` 
 
 ## Interface
+The example shows interface of base36. The interface is same for base62.
 ```python
 import datetime
 import alphabetic_timestamp as ats
@@ -71,6 +73,7 @@ ats.base36.to_timestamp("q67vhw", time_unit=ats.TimeUnit.seconds)
 Note: The string "q67vhw" is only example of encoded timestamp.
 
 ## Examples
+This package is compatible with Python2.7 and Python3.4+. However these examples are written in Python3.6.
 
 ### Encode & Print
 ```python
@@ -130,6 +133,7 @@ alphabetic_ts_36 = ats.base36.from_timestamp(dt.timestamp(), time_unit=ats.TimeU
 
 # Examples of available time units
 
+now36_ts = ats.base36.now(time_unit=ats.TimeUnit.seconds)
 now36_ts = ats.base36.now(time_unit=ats.TimeUnit.deciseconds)
 now36_ts = ats.base36.now(time_unit=ats.TimeUnit.centiseconds)
 now36_ts = ats.base36.now(time_unit=ats.TimeUnit.milliseconds)
