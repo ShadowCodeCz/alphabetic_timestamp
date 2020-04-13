@@ -3,7 +3,6 @@ import string
 import datetime
 
 # TODO: Custom Base X - rework symbols & add to readme
-# TODO: Try install & import alphabetic-timestamp and alphabetic-timestamp FIX README
 
 
 class TimeUnit(object):
